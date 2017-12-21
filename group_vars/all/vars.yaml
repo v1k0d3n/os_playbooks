@@ -1,0 +1,24 @@
+# OS API User Login Information:
+auth_os_auth_url: "http://openstack.domain.com:5000"
+auth_os_username: "user"
+
+# OS Project Details:
+project_os_project: "project_name"
+project_os_region_name: "RegionOne"
+project_os_domain_name: "Default"
+
+# OS Instance Details:
+instance_os_status: "present"
+instance_os_image_id: "image_id"
+instance_os_flavor_id: "flavor_id"
+instance_os_key_name: "ssh_key"
+instance_os_hostname: "test"
+instance_os_count: 3
+
+# Instance Network Connectivity:
+network_os_network_id: "network_id"
+network_os_network_name: "public"
+
+# Add Additional Metadata:
+meta_os_hostname: "test1_name_metadata"
+meta_os_group: "test1_group_metadata"

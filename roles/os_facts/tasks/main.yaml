@@ -1,0 +1,75 @@
+---
+# Copyright 2017 Charter DNA Team (CTEC).
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+- name: gather information about the PROJECTS in openstack cloud
+  os_project_facts:
+    auth:
+      auth_url: "{{ auth_os_auth_url }}"
+      username: "{{ auth_os_username }}"
+      password: "{{ auth_os_password }}"
+      project_name: "{{ project_os_project }}"
+- debug:
+    var: openstack_projects
+
+- name: gather information about the KEYSTONE DOMAINS in openstack cloud
+  os_keystone_domain_facts:
+    auth:
+      auth_url: "{{ auth_os_auth_url }}"
+      username: "{{ auth_os_username }}"
+      password: "{{ auth_os_password }}"
+      project_name: "{{ project_os_project }}"
+- debug:
+    var: openstack_domains
+
+- name: gather facts about the FLAVORS in openstack cloud
+  os_flavor_facts:
+    auth:
+      auth_url: "{{ auth_os_auth_url }}"
+      username: "{{ auth_os_username }}"
+      password: "{{ auth_os_password }}"
+      project_name: "{{ project_os_project }}"
+- debug:
+    var: openstack_flavors
+
+- name: gather facts about the SERVERS in openstack cloud
+  os_server_facts:
+    auth:
+      auth_url: "{{ auth_os_auth_url }}"
+      username: "{{ auth_os_username }}"
+      password: "{{ auth_os_password }}"
+      project_name: "{{ project_os_project }}"
+- debug:
+    var: openstack_servers
+
+- name: gather facts about the NETWORKS in openstack cloud
+  os_networks_facts:
+    auth:
+      auth_url: "{{ auth_os_auth_url }}"
+      username: "{{ auth_os_username }}"
+      password: "{{ auth_os_password }}"
+      project_name: "{{ project_os_project }}"
+- debug:
+    var: openstack_networks
+
+- name: gather facts about SUBNETS in openstack cloud
+  os_subnets_facts:
+    auth:
+      auth_url: "{{ auth_os_auth_url }}"
+      username: "{{ auth_os_username }}"
+      password: "{{ auth_os_password }}"
+      project_name: "{{ project_os_project }}"
+- debug:
+    var: openstack_subnets

@@ -1,0 +1,12 @@
+- hosts: localhost
+  connection: local
+  serial: True
+  become: false
+  roles:
+    - os_facts
+
+# Used to collect the password from the user:
+  vars_prompt:
+    - name: "auth_os_password"
+      prompt: "OpenStack Password"
+      private: yes
